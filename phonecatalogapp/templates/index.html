@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+</head>
+<body>
+<h1>Available data</h1>
+{% if data %}
+    <table rules="all" style="border: 1px solid black;border-collapse: collapse;">
+        <tr>
+            <th>Name</th>
+            <th>RegDate</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+        {% for curr_data in data %}
+            <tr>
+                <td>{{ curr_data.name }}</td>
+                <td>{{ curr_data.reg_date }}</td>
+                <td>{{ curr_data.address }}</td>
+                <td>{{ curr_data.phone }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No riddles are available right now.</p>
+{% endif %}
+</body>
+</html>
